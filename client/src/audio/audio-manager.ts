@@ -10,7 +10,7 @@ export class AudioManager {
     private audioCtx: AudioContext | null = null
 
     loadAudioAssets(): void {
-        this.load('footstep', '/sounds/footstep.wav')
+
         this.load('lightning', '/sounds/lightning.wav')
         this.load('hit', '/sounds/hit.wav')
         this.loadBackgroundMusic()

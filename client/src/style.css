@@ -110,7 +110,7 @@ body {
 .scoreboard {
   position: absolute;
   top: 80px;
-  left: 24px;
+  right: 120px;
 
   min-width: 180px;
 

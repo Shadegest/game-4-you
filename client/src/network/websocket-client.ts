@@ -11,10 +11,6 @@ export class WebsocketClient {
         this.socket.addEventListener("close", () => {
             console.log("DISCONNECTED");
         });
-
-        this.socket.addEventListener("message", (event) => {
-            console.log("MESSAGE:", event.data);
-        });
     }
 
     disconnect(): void {

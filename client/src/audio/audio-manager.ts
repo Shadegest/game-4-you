@@ -7,7 +7,7 @@ export class AudioManager {
     private sounds = new Map<SoundName, HTMLAudioElement>()
     private backgroundMusic: HTMLAudioElement | null = null
     private lastPlayed = new Map<SoundName, number>()
-    private audioCtx: AudioContext | null = null
+    // private audioCtx: AudioContext | null = null
 
     loadAudioAssets(): void {
 

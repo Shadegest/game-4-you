@@ -98,7 +98,6 @@ class GameClient {
                 // Play metronome sound click on every beat
                 if (timing.beatIndex !== this.lastBeatIndex) {
                     this.lastBeatIndex = timing.beatIndex;
-                    audioManager.playBeatTick();
                 }
                 this.renderer.renderRhythmGuide(
                     timing.beatProgress,

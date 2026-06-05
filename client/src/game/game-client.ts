@@ -4,7 +4,7 @@ import type { PlayerSnapshot } from "../../../shared/types/player";
 import { Renderer } from "./rendering/renderer";
 import { startRenderLoop, type RenderLoopController } from "./rendering/animation";
 import { rhythmManager } from "../audio/rhythm-manager";
-import { audioManager } from "../audio/audio-manager";
+// import { audioManager } from "../audio/audio-manager";
 
 class GameClient {
     private renderer: Renderer | null = null;

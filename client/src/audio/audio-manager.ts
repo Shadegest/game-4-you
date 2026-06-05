@@ -73,46 +73,46 @@ export class AudioManager {
         })
     }
 
-    playBeatTick(): void {
-        try {
-            if (!this.audioCtx) {
-                const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext
-                if (AudioContextClass) {
-                    this.audioCtx = new AudioContextClass()
-                }
-            }
-
-            if (!this.audioCtx) {
-                return
-            }
-
-            if (this.audioCtx.state === 'suspended') {
-                this.audioCtx.resume()
-            }
-
-            const now = this.audioCtx.currentTime
-
-            const osc = this.audioCtx.createOscillator()
-            const gainNode = this.audioCtx.createGain()
-
-            osc.connect(gainNode)
-            gainNode.connect(this.audioCtx.destination)
-
-            osc.type = 'triangle'
-            // High frequency at start for a crisp click, sliding down
-            osc.frequency.setValueAtTime(1000, now)
-            osc.frequency.exponentialRampToValueAtTime(300, now + 0.03)
-
-            // Extremely quick decay
-            gainNode.gain.setValueAtTime(0.25, now)
-            gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.04)
-
-            osc.start(now)
-            osc.stop(now + 0.05)
-        } catch (e) {
-            console.error('Failed to play synthesized beat tick:', e)
-        }
-    }
+    /* playBeatTick(): void {
+         try {
+             if (!this.audioCtx) {
+                 const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext
+                 if (AudioContextClass) {
+                     this.audioCtx = new AudioContextClass()
+                 }
+             }
+ 
+             if (!this.audioCtx) {
+                 return
+             }
+ 
+             if (this.audioCtx.state === 'suspended') {
+                 this.audioCtx.resume()
+             }
+ 
+             const now = this.audioCtx.currentTime
+ 
+             const osc = this.audioCtx.createOscillator()
+             const gainNode = this.audioCtx.createGain()
+ 
+             osc.connect(gainNode)
+             gainNode.connect(this.audioCtx.destination)
+ 
+             osc.type = 'triangle'
+             // High frequency at start for a crisp click, sliding down
+             osc.frequency.setValueAtTime(1000, now)
+             osc.frequency.exponentialRampToValueAtTime(300, now + 0.03)
+ 
+             // Extremely quick decay
+             gainNode.gain.setValueAtTime(0.25, now)
+             gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.04)
+ 
+             osc.start(now)
+             osc.stop(now + 0.05)
+         } catch (e) {
+             console.error('Failed to play synthesized beat tick:', e)
+         }
+     } */
 
 }
 

@@ -16,9 +16,14 @@ body {
   justify-content: center;
   overflow-x: hidden;}
 
+#app {
+  width: 100vw;
+  min-height: 100vh;
+}
+
 .game-root {
   width: 100vw;
-  display: felx;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -30,9 +35,9 @@ body {
   flex-direction: column;
   align-items: center;
   place-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
-  padding: 24px;
+  padding: 120px 24px 32px;
   box-sizing: border-box;
   width: 100%;
 }
@@ -109,10 +114,11 @@ body {
 
 .scoreboard {
   position: absolute;
-  top: 80px;
-  left: 120px;
+  top: 128px;
+  left: 24px;
 
   min-width: 180px;
+  max-width: 240px;
 
   padding: 14px;
 
@@ -140,8 +146,15 @@ body {
 .scoreboard-row {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
 
   padding: 4px 0;
+}
+
+.scoreboard-row span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .player-entity {
